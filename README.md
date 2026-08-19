@@ -4,14 +4,9 @@ Starter app template for the [karhu](https://github.com/bjornbasar/karhu) PHP mi
 
 ## Quick start
 
-> **This template is not on Packagist**, so `composer create-project bjornbasar/karhu-skeleton`
-> fails with a package-not-found error. Clone it instead.
-
 ```bash
-git clone https://github.com/bjornbasar/karhu-skeleton.git myapp
+composer create-project bjornbasar/karhu-skeleton myapp
 cd myapp
-rm -rf .git
-composer install
 composer serve         # http://localhost:8080
 ```
 
