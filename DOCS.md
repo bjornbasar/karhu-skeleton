@@ -27,7 +27,7 @@ karhu-skeleton/
 │   ├── Commands/
 │   │   └── HelloCommand.php         # #[Command('hello')] sample
 │   └── Controllers/
-│       └── HomeController.php       # #[Route('GET', '/')] sample
+│       └── HomeController.php       # #[Route('/', name: 'home')] sample
 ├── config/
 │   ├── commands.php                 # Array of CLI command class names
 │   └── controllers.php              # Array of controller class names (route scan input)
@@ -79,7 +79,7 @@ See [`docs/deployment/`](docs/deployment/) for reference notes (nginx + php-fpm,
 Production build step before first request:
 
 ```bash
-bin/karhu route:cache    # compile routes for cold-start performance
+vendor/bin/karhu route:cache    # compile routes for cold-start performance
 ```
 
 ---
