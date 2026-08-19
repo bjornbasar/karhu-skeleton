@@ -22,10 +22,22 @@ vendor/bin/karhu hello --name=YourName
 # Hello, YourName!
 ```
 
-Two notes on that command. `HelloCommand` reads `$args['name']`, so the value must be passed as
-`--name=…` — a bare `karhu hello YourName` lands in `$args['0']` and prints `Hello, world!`.
-And the `vendor/bin/karhu` shim only exists from karhu **v0.1.5**; on v0.1.4 run
-`php vendor/bjornbasar/karhu/bin/karhu hello --name=YourName`.
+The value must be passed as `--name=…`: `HelloCommand` reads `$args['name']`, so a bare
+`karhu hello YourName` lands in `$args['0']` and prints `Hello, world!` instead.
+
+## Which karhu you get
+
+This template requires **`bjornbasar/karhu: ^0.1.5`** — a release, from Packagist. It previously
+tracked `dev-main` with `minimum-stability: dev`, which meant a fresh clone installed whatever
+happened to be at the tip of the framework's default branch. That is a poor default for a
+starter template: two people cloning a week apart got different frameworks, and neither got
+something they could reproduce.
+
+`^0.1.5` is also what makes `vendor/bin/karhu` above work at all. Composer only links that shim
+because karhu declares a `bin` key, which landed in v0.1.5.
+
+karhu is pre-1.0, so a `0.x` minor release may break the API — bump this pin deliberately rather
+than widening it.
 
 ## What you get
 
